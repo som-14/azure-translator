@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lumina Translate</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div id="splash">
+        <div class="splash-content">
+            <div class="logo-glow"></div>
+            <h1>Lumina</h1>
+            <p>Breaking Language Barriers</p>
+        </div>
+    </div>
+
+    <div class="container main-content">
+        <header>
+            <nav>
+                <span class="brand">Lumina <span>AI</span></span>
+                <div class="config-trigger" onclick="toggleConfig()">Settings</div>
+            </nav>
+        </header>
+
+        <section id="config-panel" class="hidden">
+            <div class="glass-card">
+                <input type="password" id="api-key" placeholder="Azure API Key">
+                <input type="text" id="location" placeholder="Region (e.g., eastus)">
+                <button onclick="toggleConfig()">Save & Close</button>
+            </div>
+        </section>
+
+        <main>
+            <div class="translator-grid">
+                <div class="input-area glass-card">
+                    <select id="source-lang">
+                        <option value="en">English</option>
+                        <option value="es">Spanish</option>
+                        <option value="fr">French</option>
+                        <option value="de">German</option>
+                        <option value="hi">Hindi</option>
+                    </select>
+                    <textarea id="source-text" placeholder="Type to translate..."></textarea>
+                </div>
+
+                <div class="output-area glass-card">
+                    <select id="target-lang">
+                        <option value="hi">Hindi</option>
+                        <option value="es">Spanish</option>
+                        <option value="fr">French</option>
+                        <option value="ja">Japanese</option>
+                    </select>
+                    <div id="output-text" class="result-placeholder">Translation will appear here...</div>
+                </div>
+            </div>
+
+            <div class="action-bar">
+                <button id="translate-btn" onclick="handleTranslation()">Translate</button>
+            </div>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
